@@ -1,16 +1,77 @@
-# React + Vite
+# Users List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application that displays a list of user profiles in a social-media-style layout.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Reusable React Components
+- Props for passing data
+- Dynamic list rendering using `map()`
+- Unique keys for list items
+- User profile cards with image, name, and role
+- Basic CSS styling with Flexbox
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- JavaScript (ES6+)
+- CSS3
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+src
+│
+├── App.jsx
+├── App.css
+│
+└── components
+    │
+    └── UserProfile
+        │
+        ├── index.jsx
+        └── index.css
+```
+
+## Learning Outcomes
+
+This project helped me learn:
+
+- React Functional Components
+- JSX
+- Props
+- Rendering Lists with `map()`
+- Using Unique Keys
+- Component-Based Styling
+- Flexbox Layout
+
+## Getting Started
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/vinay-1720/Users_list.git
+```
+
+2. Navigate to the project
+
+```bash
+cd Users_list
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Run the development server
+
+```bash
+npm run dev
+```
+
+## Author
+
+Vinay Chary
