@@ -2,7 +2,7 @@ import UserProfile from "./components/UserProfile/index.jsx"
 import "./App.css"
 import { Component } from "react"
 
-const userDetailsList=[
+const initialuserDetailsList=[
   {
   id:1,
   imageUrl:"https://randomuser.me/api/portraits/men/1.jpg",
@@ -44,17 +44,28 @@ const userDetailsList=[
 
 class App extends Component{
   state={
-    searchInput:""
+    searchInput:"",
+    userDetailsList:initialuserDetailsList
   };
 
   onChangeSearchInput=(event)=>{
     this.setState({
-      searchInput:event.target.value  
+      searchInput:event.target.value
     })
   }
 
+  onDeleteUser=(id)=>{
+    const {userDetailsList}=this.state
+    const filteredUsersData=userDetailsList.filter((each)=>
+    each.id!==id
+  );
+  this.setState({
+    userDetailsList:filteredUsersData
+  })
+  }
+
   render(){
-    const {searchInput}=this.state
+    const {searchInput,userDetailsList}=this.state
     const searchresults=userDetailsList.filter((eachuser)=>
       eachuser.name.includes(searchInput)
     );
@@ -75,8 +86,9 @@ class App extends Component{
         <ul className="user-list">
           {searchresults.map((eachItem)=>(
             <UserProfile 
-            key={eachItem.id} 
+            key={eachItem.id}
             userDetails={eachItem}
+            onDeleteUser={this.onDeleteUser}
             />
           ))}
         </ul>

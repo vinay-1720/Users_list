@@ -1,9 +1,11 @@
 import './index.css'
 
 const UserProfile=(props)=>{
-    const {userDetails}=props;
-    const {imageUrl,name,role}=userDetails;
-
+    const {userDetails,onDeleteUser}=props;
+    const {imageUrl,name,role ,id}=userDetails;
+    const onDelete=()=>{
+        onDeleteUser(id);
+    };
 
     return (
     <li className='user-card'>
@@ -12,6 +14,7 @@ const UserProfile=(props)=>{
             <h2>{name}</h2>
             <p>{role}</p>
         </div>
+        <button className='delete-btn' onClick={onDelete}> ✕ </button>
     </li>
 )
 }
